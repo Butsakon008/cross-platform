@@ -1,0 +1,48 @@
+<UI>:
+    id:scr_manager
+    Scr_1:
+    Scr_2:
+
+<Scr_2>:
+    name:"Scr_2"
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: txt_number
+            hint_text:"input number"
+        BoxLayout:
+            ToggleButton:
+                text: "base 2"
+                group: 'convert_mode'
+                on_press: root.convert(*args)
+            ToggleButton:
+                text: "base 8"
+                group: 'convert_mode'
+                on_press: root.convert(*args)
+            ToggleButton:
+                text: "base 16"
+                group: 'convert_mode'
+                on_press: root.convert(*args)
+    
+        Label:      
+            id:lbl_output
+            text:"output ="
+
+#screen 1 
+<Scr_1>:
+    name:'Scr_1'
+    canvas.before:
+        Rectangle:
+            source: "7.jpg"
+            size: root.width, root.height
+            pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+    Button:
+        text:"แปลงฐานข้อมูล"
+        font_name: 'tahoma'
+        color: "yellow"
+        on_press:app.root.current = 'Scr_2'
+        pos_hint:{'center_x' : 0.5,'center_y':0.1} #ปรับขยับชิดซ้ายขวา กลาง เรื่อยๆ 
+        size_hint:0.25,0.10
+        background_color:[1,0,0,1]

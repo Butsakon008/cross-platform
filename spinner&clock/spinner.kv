@@ -1,0 +1,22 @@
+<UI>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            Spinner:
+                id:spin_lang
+                text: 'Please select'
+                values:("Python", "PHP", "html", "sql")
+                size_hint: (.5, .2)
+                pos_hint: {'x': 0.6,'y':0.8}
+            Label:
+                id:lbl_output
+                text:'You selected : {}'.format(spin_lang.text)
+        BoxLayout:
+            Label:
+                text: "Add Language"
+            TextInput:
+                id: txt_input
+            Button:
+                id: b1
+                text: "Add_item"
+                on_press: root.Add_item()

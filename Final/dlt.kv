@@ -1,0 +1,138 @@
+<UI>:
+    Dlt_1:
+    Dlt_2:
+        
+<Dlt_1>:
+    name: 'D1'
+    BoxLayout:
+    	spacing: dp(10)
+		orientation: 'vertical'
+		padding: [0, dp(20), 0, 0]
+		canvas.before:
+			Color:
+				rgba:[1,1,1,1]
+			RoundedRectangle:
+                pos:self.pos
+				size:self.size
+				source: 'D1.png'
+
+    Button:
+        text:"เข้าสูระบบ"
+        font_name: 'tahoma'
+        color: "black"
+        on_press:app.root.current = 'D2'
+        pos_hint:{'center_x' : 0.5,'center_y':0.6} #ปรับขยับชิดซ้ายขวา กลาง เรื่อยๆ 
+        size_hint:0.45,0.10
+        background_color:[255,255,0]
+
+    Button:
+        text:"ลงทะเบียนใหม่"
+        font_name: 'tahoma'
+        color: "white"
+        on_press:app.root.current = 'D2'
+        pos_hint:{'center_x' : 0.5,'center_y':0.45} #ปรับขยับชิดซ้ายขวา กลาง เรื่อยๆ 
+        size_hint:0.45,0.10
+        background_color:[128,0,128]
+
+    Button:
+        text:"For Foreigner"
+        font_name: 'tahoma'
+        color: "white"
+        on_press:app.root.current = 'D2'
+        pos_hint:{'center_x' : 0.5,'center_y':0.3} #ปรับขยับชิดซ้ายขวา กลาง เรื่อยๆ 
+        size_hint:0.45,0.10
+        background_color:[0,128,128]
+
+    Image:
+        source:'L.png'
+        pos_hint:{'center_x' : 0.5,'center_y':0.2}
+        size_hint:0.45,0.10
+
+    Label:
+        text:'Copyrights @ สงวนลิขสิทธิ์ @ 2021 กรมกาขนส่งทางบก|dlt.go.th'
+        font_name: 'tahoma'
+        color: "black"
+        pos_hint:{'center_x' : 0.5,'center_y':0.1}
+
+
+<Dlt_2>:
+    name:'D2'
+    BoxLayout:
+        spacing: dp(10)
+		orientation: 'vertical'
+		padding: [0, dp(20), 0, 0]
+		canvas.before:
+			Color:
+				rgba:[1,1,1,1]
+			RoundedRectangle:
+                pos:self.pos
+				size:self.size
+				source: 'D1.png'
+
+    Label:
+        text:'ระบบการอบรมใบอนุญาตขับรถ|ลงทะเบียนข้ารับการอบรม'
+        font_name: 'tahoma'
+        font_size: 30
+        color: "black"
+        pos_hint:{'center_x' : 0.5,'center_y':0.9}
+
+    TextInput:
+        id:txt_Dlt1
+        hint_text:"ระบุเลขบัตรประชาชน"
+        font_name:"tahoma"
+        font_size: 15
+        size_hint:0.60,0.07
+        pos_hint:{'center_x' : 0.5,'center_y':0.8}
+
+    TextInput:
+        id:txt_Dlt2
+        hint_text:"ระบุเลขบัตรประชาชนอีกครั้ง"
+        font_name:"tahoma"
+        font_size: 15
+        size_hint:0.60,0.07
+        pos_hint:{'center_x' : 0.5,'center_y':0.7}
+
+    TextInput:
+        id:txt_Dlt3
+        hint_text:"ระบุเบอร์โทรศัพท์"
+        font_name:"tahoma"
+        font_size: 15
+        size_hint:0.60,0.07
+        pos_hint:{'center_x' : 0.5,'center_y':0.6}
+    
+    TextInput:
+        id:txt_Dlt4
+        hint_text:"ระบุอีเมล"
+        font_name:"tahoma"
+        font_size: 15
+        size_hint:0.60,0.07
+        pos_hint:{'center_x' : 0.5,'center_y':0.5}
+
+    Label:
+        text:'กรุณาระบุ วันเดือนปี พ.ศ. เกิดให้ถูกต้อง'
+        font_name: 'tahoma'
+        color: "red"
+        pos_hint:{'center_x' : 0.5,'center_y':0.4}
+
+    TextInput:
+        hint_text:"วัน"
+        font_name:"tahoma"
+        font_size: 15
+        size_hint:0.60,0.07
+        pos_hint:{'center_x' : 0.5,'center_y':0.3}
+    TextInput:
+        hint_text:"เดือน"
+        font_name:"tahoma"
+        font_size: 15
+        size_hint:0.60,0.07
+        pos_hint:{'center_x' : 0.5,'center_y':0.2}
+
+    Button:
+        id:btn_regis
+        text:"ดำเนินการต่อ"
+        font_name: 'tahoma'
+        color: "white"
+        pos_hint:{'center_x' : 0.5,'center_y':0.1} #ปรับขยับชิดซ้ายขวา กลาง เรื่อยๆ 
+        size_hint:0.45,0.09
+        background_color:[128,0,128]
+        on_press: root.check_data()
